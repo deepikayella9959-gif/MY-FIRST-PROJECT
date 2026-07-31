@@ -1,0 +1,375 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deepika Yella Portfolio</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: #ffb6c1; /* baby pink */
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    color: #000;
+  }
+
+  /* Navigation bar */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #0000ff;
+    padding: 12px 10px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .navbar a:hover {
+    background-color: #87cefa;
+    color: #000;
+  }
+
+  /* Home / header section - light blue */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: #add8e6; /* light blue */
+    margin: 20px;
+    border-radius: 10px;
+  }
+
+  .header h1 {
+    color: #000;
+    font-size: 3.5rem;
+    margin: 0;
+  }
+
+  section {
+    scroll-margin-top: 70px;
+  }
+
+  /* Main grid layout for About and skills side by side */
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px;
+  }
+
+  /* About section styling */
+  .about-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .about-text {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  /* Skills container with separate boxes for each skill */
+  .skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .skill {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  .skills-heading {
+    font-size: 1.6rem;
+    margin: 10px 0;
+  }
+
+  /* Soft skills section */
+  .soft-skills-box {
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .soft-skills-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .soft-skills-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .soft-skill {
+    background-color: #87cefa; /* light blue */
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  /* Projects section */
+  .projects-box {
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .projects-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .project-card {
+    background-color: #add8e6;
+    border-radius: 8px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  /* Certificate section */
+  .certificate-box {
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .certificate-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .certificate-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .certificate-card {
+    background-color: #87cefa;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  /* Education section */
+  .education-box {
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+  }
+
+  .education-box h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .education-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-style: italic;
+  }
+
+  .education-table th,
+  .education-table td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .education-table th {
+    background-color: #add8e6;
+  }
+
+  /* Contact section */
+  .contact-box {
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+  }
+
+  .contact-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-item {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 700px) {
+    .main-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificate">Certificate</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="header">
+    <h1>Deepika Yella</h1>
+  </section>
+
+  <!-- About + Skills -->
+  <div class="main-container">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>About</h2>
+      <p class="about-text">
+        I am Deepika Yella, currently in my 2nd year of BTech at Pydah College of Engineering.
+      </p>
+      <p class="about-text">
+        Since starting college, I have been building on my fundamentals and exploring new areas
+        of technology, including web development, data analytics, cyber security, and artificial
+        intelligence. I enjoy taking on new projects, learning by doing, and growing my skills
+        both as a developer and as a team leader.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h3 class="skills-heading">Technical Skills</h3>
+      <div class="skills-box">
+        <div class="skill">C</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Java</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">Aitbash</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Soft skills -->
+  <section class="soft-skills-box">
+    <h3>Soft Skills</h3>
+    <div class="soft-skills-list">
+      <div class="soft-skill">English</div>
+      <div class="soft-skill">Leader Skills</div>
+      <div class="soft-skill">Fast Work</div>
+      <div class="soft-skill">Group Work</div>
+      <div class="soft-skill">Leadership</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects-box">
+    <h3>Projects</h3>
+    <div class="projects-list">
+      <div class="project-card">Project 1 - Coming Soon</div>
+      <div class="project-card">Project 2 - Coming Soon</div>
+      <div class="project-card">Project 3 - Coming Soon</div>
+    </div>
+  </section>
+
+  <!-- Certificate -->
+  <section id="certificate" class="certificate-box">
+    <h3>Certifications</h3>
+    <div class="certificate-list">
+      <div class="certificate-card">AI</div>
+      <div class="certificate-card">Web Development</div>
+      <div class="certificate-card">Data Analytics</div>
+      <div class="certificate-card">Cyber Security</div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="education-box">
+    <h3>Education</h3>
+    <table class="education-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Institution</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Schooling</td>
+          <td>Chaitanya</td>
+          <td>2022-23, 2023-25</td>
+        </tr>
+        <tr>
+          <td>College</td>
+          <td>Pydah College of Engineering</td>
+          <td>2025 - 2029</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-box">
+    <h3>Contact Me</h3>
+    <p class="contact-item"><strong>Name:</strong> Deepika Yella</p>
+    <p class="contact-item"><strong>Email:</strong> your.email@example.com</p>
+    <p class="contact-item"><strong>Phone No:</strong> +91 12345 67890</p>
+    <p class="contact-item"><strong>Questions:</strong> Feel free to ask!</p>
+  </section>
+
+</body>
+</html>
+```
